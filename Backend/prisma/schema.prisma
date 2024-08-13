@@ -31,7 +31,7 @@ model Stage {
   description String
   image       String
   rating      Int
-  notes       String
+  notes       String?
   dayId       Int
   day         Days     @relation(fields: [dayId], references: [id])
   createdAt   DateTime @default(now())
