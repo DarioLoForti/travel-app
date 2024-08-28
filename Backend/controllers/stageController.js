@@ -14,7 +14,6 @@ const store = async (req, res) => {
     const data = {
       title,
       description,
-      image,
       rating: parseInt(rating),
       notes,
       dayId: parseInt(dayId),
