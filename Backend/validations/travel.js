@@ -14,3 +14,5 @@ const bodyData = {
     },
   },
 };
+
+module.exports = { bodyData };

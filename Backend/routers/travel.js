@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const { paramID } = require("../validations/id");
-const validator = require("../middleware/validator");
+const validator = require("../middlewares/validator");
+const { bodyData } = require("../validations/travel");
 const {
   store,
   index,
@@ -12,13 +13,13 @@ const {
 
 router.get("/", index);
 
-router.post("/", validator, store);
+router.post("/", validator(bodyData), store);
 
 router.use("/:id", validator(paramID));
 
 router.get("/:id", show);
 
-router.put("/:id", validator, update);
+router.put("/:id", validator(bodyData), update);
 
 router.delete("/:id", destroy);
 
